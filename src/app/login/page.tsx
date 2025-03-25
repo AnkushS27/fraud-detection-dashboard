@@ -11,10 +11,13 @@ export default function LoginPage() {
   const [email, setEmail] = useState(mockUsers[0].email);
   const [password, setPassword] = useState(mockUsers[0].password_hashed);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); 
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true); 
+
     const res = await fetch('/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -25,6 +28,7 @@ export default function LoginPage() {
       router.push('/dashboard');
     } else {
       setError('Invalid credentials');
+      setLoading(false);
     }
   };
 
@@ -48,8 +52,8 @@ export default function LoginPage() {
           className="mb-4 w-full rounded border p-2"
           required
         />
-        <Button type="submit" variant={"default"} className="w-full cursor-pointer">
-          Login
+        <Button type="submit" variant="default" className="w-full cursor-pointer" disabled={loading}>
+          {loading ? 'Logging in...' : 'Login'}
         </Button>
         {error && <p className="mt-2 text-red-500">{error}</p>}
       </form>

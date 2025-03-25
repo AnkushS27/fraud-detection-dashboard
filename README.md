@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fraud Detection Dashboard 🕵️‍♀️🚨
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The Fraud Detection Dashboard is a powerful web application designed to provide real-time insights into fraudulent activities, enabling security teams to monitor, analyze, and mitigate risks effectively.
+
+## 🌟 Features
+
+### Key Capabilities
+
+- **Real-time Fraud Trend Visualization**
+
+  - Interactive 30-day trend analysis chart
+  - Visual representation of fraud detection metrics
+
+- **Comprehensive Fraud Monitoring**
+
+  - Catalog of detected fraudulent applications
+  - List of suspicious URLs
+
+- **Advanced Security Controls**
+  - User authentication system
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- **Framework**: Next.js 15
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Charting**: Recharts
+- **UI Components**: shadcn/ui
+
+### Backend
+
+- **API**: Next.js Server Routes
+- **Authentication**: JWT-based authentication
+- **Data Management**: Server-side data fetching
+
+### Development Tools
+
+- **Package Manager**: PNPM
+- **Version Control**: Git
+- **Deployment**: Vercel
+
+## 📦 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Node.js (v18 or later)
+- PNPM (v8 or later)
+- Git
+
+## 🚀 Local Setup
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/AnkushS27/fraud-detection-dashboard
+cd fraud-detection-dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3. Configure Environment
 
-## Learn More
+Create a `.env.local` file in the project root:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# JWT Authentication
+JWT_SECRET=your_super_secret_and_secure_key
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Run Development Server
 
-## Deploy on Vercel
+```bash
+pnpm dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Access the application at `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔐 Demo Credentials
+
+For testing and exploration:
+
+### Admin Access
+
+- **Email**: admin@frauddashboard.com
+- **Password**: $2a$10$XYZ1234abcd$
+
+### Analyst Access
+
+- **Email**: analyst@frauddashboard.com
+- **Password**: $2a$10$ABC5678efgh$
+
+**⚠️ Security Note**: These credentials are for demonstration only. Always use strong, unique passwords in production.
+
+## 🌐 Live Demo
+
+Check out the deployed application:
+[Fraud Detection Dashboard](https://fraud-detection-dashboard-navy.vercel.app/)
+
+## 🔍 Data Sources
+
+Currently using mock data for demonstration. Production implementation should integrate with:
+
+- Fraud detection APIs
+- Security databases
+- Real-time threat intelligence platforms

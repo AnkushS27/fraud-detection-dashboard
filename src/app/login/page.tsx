@@ -2,10 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+
+// used mock data here this will be removed for real users
+import { mockUsers } from '@/lib/mockData';
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(mockUsers[0].email);
+  const [password, setPassword] = useState(mockUsers[0].password_hashed);
   const [error, setError] = useState('');
   const router = useRouter();
 
@@ -44,9 +48,9 @@ export default function LoginPage() {
           className="mb-4 w-full rounded border p-2"
           required
         />
-        <button type="submit" className="w-full rounded bg-blue-500 p-2 text-white hover:bg-blue-600">
+        <Button type="submit" variant={"default"} className="w-full cursor-pointer">
           Login
-        </button>
+        </Button>
         {error && <p className="mt-2 text-red-500">{error}</p>}
       </form>
     </div>

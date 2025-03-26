@@ -25,9 +25,7 @@ export default function LoginPage() {
     });
 
     if (res.ok) {
-      setTimeout(() => {
-        router.push('/dashboard');
-      }, 5000);
+      window.location.href = '/dashboard';
     } else {
       setError('Invalid credentials');
       setLoading(false);

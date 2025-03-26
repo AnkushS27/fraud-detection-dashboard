@@ -18,6 +18,8 @@ export async function POST(request: Request) {
 
   const token = jwt.sign({ email: user.email, role: user.role }, process.env.JWT_SECRET || 'your-secret-key', { expiresIn: '1h' });
   const response = NextResponse.json({ message: 'Login successful' });
+  console.log('Setting cookie:', token);
   response.cookies.set('session', token, { httpOnly: true, secure: true, path: '/', maxAge: 3600 });
+  console.log('Redirecting to dashboard');
   return response;
 }

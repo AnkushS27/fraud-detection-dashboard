@@ -18,6 +18,6 @@ export async function POST(request: Request) {
 
   const token = jwt.sign({ email: user.email, role: user.role }, process.env.JWT_SECRET || 'your-secret-key', { expiresIn: '1h' });
   const response = NextResponse.json({ message: 'Login successful' });
-  response.cookies.set('session', token, { httpOnly: true, path: '/', maxAge: 3600 });
+  response.cookies.set('session', token, { httpOnly: true, secure: true, path: '/', maxAge: 3600 });
   return response;
 }

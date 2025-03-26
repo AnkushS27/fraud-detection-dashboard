@@ -27,7 +27,7 @@ export default function LoginPage() {
     if (res.ok) {
       setTimeout(() => {
         router.push('/dashboard');
-      }, 100);
+      }, 5000);
     } else {
       setError('Invalid credentials');
       setLoading(false);

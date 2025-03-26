@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
 // used mock data here this will be removed for real users
@@ -11,8 +10,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState(mockUsers[0].email);
   const [password, setPassword] = useState(mockUsers[0].password_hashed);
   const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false); 
-  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
